@@ -1,9 +1,10 @@
 import { knex as setupKnex, Knex } from 'knex'
+import { env } from '../validations/env'
 
 export const config = {
   client: 'sqlite',
   connection: {
-    filename: process.env.DATABASE_URL,
+    filename: env.DATABASE_URL,
   },
   useNullAsDefault: true,
   migrations: {

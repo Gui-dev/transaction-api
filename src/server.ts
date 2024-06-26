@@ -1,10 +1,10 @@
 import Fastify from 'fastify'
+import { env } from './validations/env'
 
-const PORT = 3333 || process.env.PORT
 const app = Fastify()
 
 app
   .listen({
-    port: PORT,
+    port: env.PORT,
   })
-  .then(() => console.log(`HTTP Server running http://localhost:${PORT}`))
+  .then(() => console.log(`HTTP Server running http://localhost:${env.PORT}`))
