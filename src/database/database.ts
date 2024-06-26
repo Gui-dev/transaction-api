@@ -1,4 +1,5 @@
-import { knex as setupKnex, Knex } from 'knex'
+import { Knex, knex as setupKnex } from 'knex'
+
 import { env } from '../validations/env'
 
 export const config = {

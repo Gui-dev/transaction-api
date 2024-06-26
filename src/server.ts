@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+
 import { env } from './validations/env'
 
 const app = Fastify()
