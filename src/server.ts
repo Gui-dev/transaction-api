@@ -1,13 +1,7 @@
-import cookie from '@fastify/cookie'
-import Fastify from 'fastify'
-
-import { transactionRoutes } from './routes/transactions'
+import { app } from './app'
 import { env } from './validations/env'
 
-const app = Fastify()
-
-app.register(cookie)
-app.register(transactionRoutes)
+console.log('ENV: ', env)
 
 app
   .listen({

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx --watch --env-file=.env src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "test": "vitest",
+    "test": "--env-file=.env.test vitest",
     "knex:migrate": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:make --",
     "knex:migrate-latest": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:latest",
     "knex:migrate-rollback": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:rollback"
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^20.14.8",
+    "@types/supertest": "^6.0.2",
     "eslint": "^8.57.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "supertest": "^7.0.0",
