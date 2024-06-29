@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx --watch --env-file=.env src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "knex:migrate": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:make --",
     "knex:migrate-latest": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:latest",
     "knex:migrate-rollback": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:rollback"
@@ -21,7 +21,8 @@
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.15.7",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
   },
   "dependencies": {
     "@fastify/cookie": "^9.3.1",
