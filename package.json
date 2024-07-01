@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx --watch --env-file=.env src/server.ts",
+    "dev": "tsx --watch src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "test": "--env-file=.env.test vitest",
+    "test": "vitest",
     "knex:migrate": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:make --",
     "knex:migrate-latest": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:latest",
     "knex:migrate-rollback": "pnpm dlx knex --knexfile src/database/knexfile.ts migrate:rollback"
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@fastify/cookie": "^9.3.1",
+    "dotenv": "^16.4.5",
     "fastify": "^4.28.0",
     "knex": "^3.1.0",
     "sqlite3": "^5.1.7",
