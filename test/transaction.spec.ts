@@ -75,4 +75,33 @@ describe('Transaction routes', () => {
       }),
     )
   })
+
+  it('should be able to get the summary', async () => {
+    const createTransactionResponse = await request(app.server)
+      .post('/transactions')
+      .send({
+        title: 'Fake credit transaction',
+        amount: 5000,
+        type: 'credit',
+      })
+    const cookie = createTransactionResponse.get('Set-Cookie')
+
+    await request(app.server)
+      .post('/transactions')
+      .set('Cookie', cookie!)
+      .send({
+        title: 'Fake debit transaction',
+        amount: 2000,
+        type: 'debit',
+      })
+
+    const summaryResponse = await request(app.server)
+      .get('/transactions/summary')
+      .set('Cookie', cookie!)
+      .expect(200)
+
+    expect(summaryResponse.body.summary).toEqual({
+      amount: 3000,
+    })
+  })
 })
