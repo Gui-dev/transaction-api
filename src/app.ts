@@ -1,5 +1,3 @@
-import 'dotenv/config'
-
 import cookie from '@fastify/cookie'
 import Fastify from 'fastify'
 

@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto'
 
 import { FastifyInstance } from 'fastify'
 
-import { knex } from '../../database/database'
+import { knex } from '../database/database'
 import { checkSessionIdExists } from '../middlewares/check-session-id-exists'
 import { createTransactionBodySchema } from '../validations/create-transaction-validation'
 import { getTransactionParamsSchema } from '../validations/get-transaction-validation'
